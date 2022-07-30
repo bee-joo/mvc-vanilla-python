@@ -3,6 +3,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 import urllib.parse
 import mimetypes
 import models.client as model 
+import sys
 
 
 env = Environment(
@@ -109,5 +110,11 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(result)
 
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
-httpd.serve_forever()
+try:
+    httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+    print("Serving on localhost:8000")
+    httpd.serve_forever()
+
+except KeyboardInterrupt:
+    print("Stopping server")
+    sys.exit(0)
