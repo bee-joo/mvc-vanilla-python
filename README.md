@@ -16,7 +16,7 @@ Summary:
 ```
 git clone https://github.com/bee-joo/mvc-vanilla-python.git
 ```
-1. Install dependencies from [`requirements.txt`](./requirments.txt)
+1. Install dependencies from [`requirements.txt`](./requirements.txt)
 ```
 pip3 install -r requirements.txt
 ```
